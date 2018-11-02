@@ -16,7 +16,6 @@ class Solution(object):
 					j += 1
 				if j == len(needle):
 					return i;
-
 		return -1;
 
 
