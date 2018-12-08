@@ -1,0 +1,39 @@
+def swap_nth_node(head, n):
+    prev = None
+    current = head
+
+    if head == None:
+    	return head
+
+    if n == 1:
+    #No need to swap head with head
+    	return head
+
+    count = 1
+    while current != None and count < n:
+    	prev = current
+    	current = current.next
+    	count += 1
+
+    if current == None:
+    	return head
+
+
+    #current is pointing to nth node
+    #Let's swap nth node with head
+
+    prev.next = head
+    temp = head.next
+    head.next = current.next
+    current.next = temp
+	
+    return current
+
+
+list_head = [1, 2, 3, 4, 5]
+print list_head
+
+list_head = swap_nth_node(list_head, 3)
+print list_head
+
+
